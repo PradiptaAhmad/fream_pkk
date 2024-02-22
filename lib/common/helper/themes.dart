@@ -263,3 +263,14 @@ TextStyle tsLabelRegularRed = GoogleFonts.poppins(
   fontWeight: FontWeight.w400,
   fontSize: figmaFontsize(10),
 );
+
+TextStyle tsLabelRegularWhite2 = GoogleFonts.poppins(
+  color: primaryColor,
+  fontWeight: FontWeight.w400,
+  fontSize: figmaFontsize(6),
+);
+TextStyle tsSpesialRating = GoogleFonts.poppins(
+  color: Colors.amber,
+  fontWeight: FontWeight.w600,
+  fontSize: figmaFontsize(10),
+);
