@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:fream/app/pages/detail_page/detail_page_controller.dart';
+import 'package:fream/app/pages/favorite_page/favorite_page_view.dart';
 import 'package:fream/common/helper/themes.dart';
+import 'package:fream/common/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class DetailPageView extends GetView<DetailPageController> {
@@ -12,6 +14,15 @@ class DetailPageView extends GetView<DetailPageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.FAVORITE_PAGE);
+              },
+              icon: Icon(Icons.favorite_outline))
+        ],
+      ),
       backgroundColor: backgroundPageColor,
       body: SingleChildScrollView(
         child: Column(
@@ -98,13 +109,26 @@ class DetailPageView extends GetView<DetailPageController> {
                       SizedBox(
                         width: 25,
                       ),
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.grey[800],
-                            borderRadius: BorderRadius.circular(10)),
-                        child: Icon(Icons.bookmark, color: Colors.white),
-                      )
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[800],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          DetailPageController detailController = Get.find<DetailPageController>();
+                          detailController.toggleButton(); // Toggle button status
+                        },
+                        child: Obx(() {
+                          DetailPageController detailController = Get.find<DetailPageController>();
+                          return Icon(
+                            detailController.isButtonPressed.value ? Icons.bookmark : Icons.bookmark_outline,
+                            color: Colors.white,
+                          );
+                        }),
+                      ),
+                    ),
                     ],
                   ),
                   SizedBox(

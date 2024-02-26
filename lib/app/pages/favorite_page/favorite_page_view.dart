@@ -148,7 +148,7 @@ class FavoritePageView extends GetView<FavoritePageController> {
                       margin: const EdgeInsets.only(top: 20.0,),
                       width: 180,
                       height: 130,
-                      color: Colors.white,
+                      child: Image.asset("assets/images/jurassic.png"),
                     ),
                     Container(
                       padding: const EdgeInsets.only(left: 20,),
@@ -167,7 +167,7 @@ class FavoritePageView extends GetView<FavoritePageController> {
                                     textAlign: TextAlign.start,
                                   ),
                                 ),
-                                Icon(Icons.favorite,color: Colors.white,)
+                                Icon(Icons.favorite,color: Colors.red,)
                               ],
                             ),
                           ),

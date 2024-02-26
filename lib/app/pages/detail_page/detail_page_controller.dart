@@ -1,8 +1,12 @@
 import 'package:get/get.dart';
 
 class DetailPageController extends GetxController {
-  // ignore: unused_field
 
+  var isButtonPressed = false.obs;
+
+  void toggleButton() {
+    isButtonPressed.value = !isButtonPressed.value;
+  }
 
   @override
   void onInit() {
