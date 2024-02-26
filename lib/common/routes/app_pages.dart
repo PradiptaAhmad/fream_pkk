@@ -9,7 +9,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.FAVORITE_PAGE;
+  static const INITIAL = Routes.DETAIL_PAGE;
 
   static final routes = [
     GetPage(

@@ -3,6 +3,7 @@ import 'package:fream/common/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 void main() {
+    
   runApp(GetMaterialApp(
     title: 'Flutter Demo',
     theme: ThemeData(
